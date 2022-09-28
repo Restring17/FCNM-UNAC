@@ -1,4 +1,10 @@
 program Prueba
     implicit none
-    Write(*,*)'Hola Mundo'    
+    integer::x,y,z
+    Write(*,*)'Escriba dos numeros'
+    print*,''
+    Read(*,*)x,y
+    print*,''
+z=x+y
+    Write(*,*)'La suma de los dos numeros es',z
 end program Prueba

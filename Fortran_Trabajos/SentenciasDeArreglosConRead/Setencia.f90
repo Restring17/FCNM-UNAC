@@ -1,0 +1,9 @@
+PROGRAM UNAC
+    INTEGER,DIMENSION(4)::X
+    INTEGER::I
+    DO I=1,4
+    WRITE(*,*)'INGRESE X'
+    READ(*,*)X(I)
+    END DO
+    WRITE(*,*)X
+    END PROGRAM UNAC

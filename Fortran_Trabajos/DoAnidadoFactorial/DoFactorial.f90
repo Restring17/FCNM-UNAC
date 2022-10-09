@@ -9,7 +9,7 @@ Program ABC
     principal: do k=1,3
              write(*,'(2x,A,I1)')'Generacion: ',k
              print*,''
-    intento: do	i=1,15
+    intento:   do  i=1,15
                  write(*,'(5x,A,I2,$)')'Intento ',i
                  write(*,'(5x,A,$)')'Ingrese un numero menor o igual a 15, use 0 para salir: '
                  read(*,*)n

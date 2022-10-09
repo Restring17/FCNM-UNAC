@@ -1,6 +1,7 @@
 program Prueba
+    use types,  only: dp
     implicit none
-    integer::x,y,z
+    Real(dp)::x,y,z
     Write(*,*)'Escriba dos numeros'
     print*,''
     Read(*,*)x,y

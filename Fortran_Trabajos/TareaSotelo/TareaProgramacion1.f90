@@ -1,4 +1,4 @@
-program	 Tarea
+program	Tarea
 implicit none
 real::x
 
@@ -38,7 +38,7 @@ write(*,'(5x,A,$)')"El resultado final de la serie es: "
 write(*,'(F12.6)')x
 print*,""
 
-end program
+endprogram Tarea
 
 	   
 

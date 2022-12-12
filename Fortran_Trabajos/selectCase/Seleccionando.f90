@@ -1,0 +1,53 @@
+PROGRAM Exercise
+    use Operaciones
+    write(*,'(//15x,A//)')'Este programa realiza diversas operaciones que pueden ser seleccionadas por el usario'
+    call Codigo
+    END PROGRAM Exercise
+!--------------------------------------------------------------------------------------------------
+    module Operaciones
+        implicit none
+        
+    contains
+    subroutine Codigo
+        INTEGER :: opcion !declaramos como entero opcion, este es el valor del menu que el usuario va a escoger
+        REAL :: a,x,y,z
+        write(*,*)'Que opcion eliges?, TECLEA UNA OPCION MOSTRADA' !Se le pide al usuario que escoja una opcion
+        write(*,*)'1.-a=X+Y/X+Z' !esta es la opcion numero 1
+        write(*,*)'2.-a=log(x*y*z)' !esta es la opcion numero 2
+        write(*,*)'3.-a=sqrt((X^2)+(Y^2)+(Z^2))' !esta es la opcion numero 3
+        READ(*,*) opcion !lee el numero que el usuario escogio
+        SELECT CASE(opcion) !comienza la seleccion de casos
+        CASE(1) !comienza el caso 1
+        write(*,*)'Dame el valor de x' !pide el valor d de x
+        READ(*,*) x !lee el valor de x
+        write(*,*)'Dame el valor de y' !pide el valor de y
+        READ(*,*) y !lee el valor de y
+        write(*,*)'Dame el valor de z' !pide el valor de z
+        READ(*,*) z !lee el valor de z
+        a=(x+y)/(x+z) !realiza la operacion y la guarda en la variable a
+        write(*,'(//10x,A14,2x,F10.2//)')' x= ', x,' y= ', y, 'z= ', z,& !va a imprimir el valor de x, el de y y el de z
+        &'a=(x+y)/(x+z)=', a !realiza la operacion y muestra el valor en a
+        CASE(2) !comienza el caso 2
+        write(*,*)'Dame el valor de x' !pide el valor d de x
+        READ(*,*) x !lee el valor de x
+        write(*,*)'Dame el valor de y' !pide el valor de y
+        READ(*,*) y !lee el valor de y
+        write(*,*)'Dame el valor de z' !pide el valor de z
+        READ(*,*) z !lee el valor de z
+        a=log(x*y*z) !realiza la operacion y la guarda en la variable a
+        write(*,'(//10x,A12,2x,F10.2//)')' x= ', x,' y= ', y, 'z= ', z,& !va a imprimir el valor de x, el de y y el de z
+        &'a=log(x*y*z)', a !realiza la operacion y muestra el valor en a
+        CASE(3) !comienza el caso 3
+        write(*,*)'Dame el valor de x' !pide el valor d de x
+        READ(*,*) x !lee el valor de x
+        write(*,*)'Dame el valor de y' !pide el valor de y
+        READ(*,*) y !lee el valor de y
+        write(*,*)'Dame el valor de z' !pide el valor de z
+        READ(*,*) z !lee el valor de z
+        a=sqrt((X**2)+(Y**2)+(Z**2)) !realiza la operacion
+        write(*,'(//10x,A26,2x,F10.2//)')' x= ', x,' y= ', y, 'z= ', z,& !va a imprimir el valor de x, el de y y el de z
+        &'a=sqrt((X^2)+(Y^2)+(Z^2))=', a !realiza la operacion y muestra el valor en a
+        END SELECT !termina la seleccion de casos
+        end subroutine Codigo
+        
+    end module Operaciones

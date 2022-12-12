@@ -1,6 +1,6 @@
 PROGRAM UNAC
     INTEGER,DIMENSION(5)::X,Y 
-    X=(/2,7,3,1,9/)
+    X=(/0,7,3,1,9/)
 
     READ(*,*)X
 

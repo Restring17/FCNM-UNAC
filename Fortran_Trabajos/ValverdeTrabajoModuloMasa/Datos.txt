@@ -1,0 +1,40 @@
+module datos
+    implicit none
+	real::x0,y0,z0,Mt
+    integer::n
+	public::x0,y0,z0,n,Mt
+contains
+subroutine ingreso(m)
+	integer,intent(out)::m
+	
+	write(*,"(//,15x,A)")"Este programa calcula el centro de masa de una distribucion discreta de masas"    
+	
+	write(*,"(//,10x,A,$)")"Ingrese el numero de cuerpos que analizara: "
+
+    read(*,*)m
+end subroutine ingreso
+
+subroutine ingreso2(n,m,x,y,z)
+   integer,intent(in)::n
+   real,intent(out),dimension(n)::m,x,y,z
+   integer::i
+   do i = 1,n
+        write(*,"(10x,A,I3,A,$)")"Ingrese la masa ",i," : "
+        read(*,*)m(i)
+        write(*,"(10x,A,$)")"Ingrese sus coordenadas cartesianas (x,y,z): "
+        read(*,*)x(i),y(i),z(i)
+    end do
+end subroutine ingreso2
+
+subroutine salida(x0,y0,z0,Mt)
+    real,intent(in)::x0,y0,z0,Mt
+	
+	
+	write(*,"(//,10x,A,3F5.2)")"El centro de masa es: ",x0,y0,z0
+    
+	write(*,"(//,10x,A,F11.5,///)")"Y la masa total es: ",Mt
+	
+end subroutine salida
+
+
+end module datos

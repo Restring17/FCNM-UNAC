@@ -1,0 +1,19 @@
+module Centroide  
+    contains
+        subroutine masas(x,y,z,m,x0,y0,z0,n,Mt)
+       
+	    integer,intent(in)::n
+        real,intent(in),dimension(n)::m,x,y,z
+		real,intent(out)::x0,y0,z0,Mt
+
+ 
+        Mt=sum(m)
+		Xc=sum(m*x)
+		Yc=sum(m*y)
+		Zc=sum(m*z)
+    
+        x0=(Xc/Mt) 
+        y0=(Yc/Mt) 
+        z0=(Zc/Mt)
+        end subroutine masas
+    end module Centroide

@@ -1,0 +1,19 @@
+program practica
+use Centroide
+use datos    
+implicit none
+
+    real,allocatable,dimension(:)::x,y,z,m
+	
+	call ingreso(n)
+
+	allocate(x(n),y(n),z(n),m(n))
+
+	call ingreso2(n,m,x,y,z)
+    
+    call masas(x,y,z,m,x0,y0,z0,n,Mt)
+
+    call salida(x0,y0,z0,Mt)
+	pause
+
+end program practica

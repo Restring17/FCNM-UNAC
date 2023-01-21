@@ -1,4 +1,4 @@
-program	examen
+program Examen
     implicit none
     integer::p,q,m,k,n
     real::r
@@ -41,4 +41,4 @@ program	examen
      deallocate(A)
      print*,''
     
-end program examen
+end program Examen

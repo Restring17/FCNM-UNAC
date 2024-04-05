@@ -1,0 +1,36 @@
+package RamirezRivera;
+import java.util.Scanner;
+/**
+ *
+ * @author AdrianRamirezRivera
+ */
+public class PrimerEj {
+    public static void main(String[]args){
+      Scanner lector=new Scanner(System.in);
+        String nombre,producto1,producto2;
+        double precio1,precio2,total;
+        int cantidad1,cantidad2;
+        boolean descuento5,descuento2;
+        
+        System.out.println("Ingrese el nombre del cliente");
+           nombre=lector.nextLine();
+        System.out.println("Ingrese el nombre del primer producto");
+            producto1=lector.nextLine();
+        System.out.println("Ingrese el precio del primer producto");
+            precio1=lector.nextDouble();
+        System.out.println("Ingrese la cantidad del primer producto");
+            cantidad1=lector.nextInt();
+        System.out.println("Ingrese el nombre del segundo producto");
+            producto2=lector.nextLine();
+          lector.nextLine();
+        System.out.println("Ingrese el precio del segundo producto");
+            precio2=lector.nextDouble();
+        System.out.println("Ingrese la cantidad del segundo producto");
+            cantidad2=lector.nextInt();
+               
+        total=(cantidad1*precio1)+(cantidad2*precio2);    
+        descuento5=(nombre.equals("ANA")) || (nombre.equals("JUAN"));
+        descuento2=(producto1.contains("GAMER")) || (producto2.contains("GAMER"));
+        System.out.println(""+total);
+        System.out.println(""+descuento5);
+        System.out.println(""+descuento2);

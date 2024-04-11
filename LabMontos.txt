@@ -1,0 +1,58 @@
+package com.mycompany.gobierno;
+import java.util.Scanner;
+/**
+ *
+ * @author LAB-USR-LNORTE
+ */
+public class Gobierno {
+
+    public static void main(String[] args) {
+        String sector;
+        char sexo;
+        double monto,total;
+        Scanner lector=new Scanner(System.in);
+        
+        System.out.println("Ingrese el sexo del funcionario");
+        sexo=lector.nextLine().charAt(0);
+        System.out.println("Ingrese el sector");
+        sector=lector.nextLine();
+        if (sexo=='M'){
+            if (sector.equals("SALUD")) {
+                monto=15000;
+                total=monto*1.20;
+               System.out.println("el monto final es: "+total); 
+            }else if (sector.equals("EDUCACION")) {
+                    monto=12000;
+                    total=monto*1.11;
+               System.out.println("el monto final es: "+total); 
+            }else if (sector.equals("Transporte")) {
+                     monto=18000;
+                    total=monto*1.15;
+               System.out.println("el monto final es: "+total); 
+            }else{
+                System.out.println("Escriba bien el sector");
+            }
+        }else{
+               if (sector.equals("SALUD")) {
+                monto=15000;
+                total=monto*1.25;
+                System.out.println("el monto final es: "+total); 
+            }else if (sector.equals("EDUCACION")) {
+                    monto=12000;
+                    total=monto*1.12;
+                    System.out.println("el monto final es: "+total); 
+           }else if (sector.equals("Transporte")) {
+                     monto=18000;
+                    total=monto*1.20;
+               System.out.println("el monto final es: "+total); 
+        }
+           else{
+             System.out.println("Escriba bien el sector");  
+                   
+           }
+          
+            }
+        
+        }
+    
+        }

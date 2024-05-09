@@ -1,0 +1,96 @@
+package LabSem7;
+import java.util.Scanner;
+import java.util.regex.Pattern;
+/**
+ *
+ * @author LAB-USR-LNORTE
+ */
+public class LabSem7 {
+    public static void main(String[] args) {
+        Scanner lector=new Scanner(System.in);
+        Pattern nomapell=Pattern.compile("^[A-Za-z\\s]+$");
+        String opciones="""
+                        #########################################
+                        #           MENU DE OPCIONES            #
+                        # 1. INGRESAR  EMPLEADO                 #
+                        # 2. INGRESAR SALARIO MENSUAL           #
+                        # 3. EMITIR BOLETA                      #
+                        # 4. SALIR                              #
+                        #########################################
+                        """;
+        String reporte="""
+                       **********************************************
+                       * RESUMEN DE BOLETA DE PAGO                  *
+                       **********************************************
+                       * NOMBRE DEL EMPLEADO:%3S                    *
+                       * APELLIDOS DEL EMPLEADO: %3S                *
+                       * TIPO: %3S                                  *
+                       * SALARIO ENE:%2.2f  SALARIO FEB:%2.2f       *
+                       * SALARIO MAR:%2.2f  SALARIO ABR:%2.2f       *
+                       * SALARIO MAY:%2.2f  SALARIO JUN:%2.2f       *
+                       * SALARIO JUL:%2.2f  SALARIO AGO:%2.2f       *
+                       * SALARIO SET:%2.2f  SALARIO OCT:%2.2f       *
+                       * SALARIO NOV:%2.2f  SALARIO DIC:%2.2f       *
+                       **********************************************
+                       * TOTAL:%3.2f                                *
+                       **********************************************
+                       """;
+       int i,a,v1,v2,v3;
+       v1=0;
+       v2=0;
+       v3=0;
+       String nombre,apellido,estado;
+       double salario,total;
+        do {
+            System.out.println(opciones);
+            i=lector.nextInt();
+            String primer= switch(i){
+                case 1 -> {
+                    do {
+                        System.out.println("Ingrese su nombre");
+                        nombre=lector.nextLine();
+                        nombre=lector.nextLine();
+                     if (!nomapell.matcher(nombre).matches()){
+                         System.out.println("Nombre invalido");
+                         v1=0;
+                     } else{
+                         v1=1;
+                     }
+                    } while (v1==0);
+                    do {
+                        System.out.println("Ingrese su apellido");
+                    apellido=lector.nextLine();
+                   if (!nomapell.matcher(apellido).matches()){
+                         System.out.println("Nombre invalido");
+                         v2=0;
+                     }else{
+                         v2=1;
+                     }
+                    } while (v2==0);
+                    
+                    yield ""; 
+                    }
+                case 2 ->{
+                        do {
+                    System.out.println("Ingrese el salario mensual");
+                    salario=lector.nextDouble();
+                   if (salario<=0){
+                         System.out.println("Salario Incorrecto, Vuelva a ingresar");
+                         v3=0;
+                     }else{
+                         v3=1;
+                     }
+                    } while (v3==0);
+                        //aca continua
+                    yield "";
+                }
+                
+                default ->{
+                    System.out.println("Opcion invalida, vuelva a ingresar");
+                    yield "";
+                }
+            };
+        } while (i!=4);
+        
+    }
+}
